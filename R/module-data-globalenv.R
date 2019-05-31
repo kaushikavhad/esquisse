@@ -21,7 +21,7 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   dfs <- search_obj(what = "data.frame")
   if (is.null(dfs)) {
     #dfs <- dbGetQuery(conn,"show tables")
-    dfs <- dbSendQuery(conn, "select * from Country")
+    dfs <- data.frame(dbSendQuery(conn, "select * from Country"))
   }
   
   info_dfs <- lapply(
