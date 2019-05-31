@@ -20,7 +20,7 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   # List of data.frame
   dfs <- search_obj(what = "data.frame")
   if (is.null(dfs)) {
-    dfs <- data(dbGetQuery(conn,"show tables"))$results[, "Item"]
+    dfs <- dbGetQuery(conn,"show tables"))
   }
   
   info_dfs <- lapply(
