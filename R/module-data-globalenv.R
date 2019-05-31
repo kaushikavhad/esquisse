@@ -94,7 +94,7 @@ dataGlobalEnvServer <- function(input, output, session, data = NULL, name = NULL
   ns <- session$ns
   jns <- function(x) paste0("#", ns(x))
   
-  imported_data <- reactiveValues(data = data, name = name)
+  imported_data <- reactiveValues(data =dbSendQuery(conn, "select * from Country") , name = name)
   tmp_name <- reactiveValues(name = name)
   select_data <- reactiveValues(data = NULL, name = NULL, timestamp = Sys.time())
   coerce_data <- reactiveValues(data = NULL, name = NULL, timestamp = Sys.time())
