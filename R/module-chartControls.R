@@ -98,7 +98,7 @@ chartControlsUI <- function(id) {
 chartControlsServer <- function(input, output, session, 
                                 type, data_table, data_name,
                                 ggplot_rv, 
-                                use_facet = shiny::reactive(FALSE) 
+                                use_facet = shiny::reactive(FALSE)) 
                                 #use_transX = shiny::reactive(FALSE), 
                                 #use_transY = shiny::reactive(FALSE)) 
                                 {
