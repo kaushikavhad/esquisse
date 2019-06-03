@@ -54,8 +54,8 @@ data=dbReadTable(conn,'Country')
 get_df <- function(df, env = globalenv()) {
   if (df %in% ls(name = env)) {
     get(x = df, envir = env)
-  } else if (df %in% data(data)) {
-    get(utils::data(data))
+  } else if (df %in% data) {
+    get(utils::data)
   } else {
     NULL
   }
