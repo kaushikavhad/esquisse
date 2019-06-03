@@ -53,8 +53,8 @@ clean_string <- function(str) {
 get_df <- function(df, env = globalenv()) {
   if (df %in% ls(name = env)) {
     get(x = df, envir = env)
-  } else if (df %in% data(package = "ggplot2", envir = environment())$results[, "Item"]) {
-    get(utils::data(list = df, package = "ggplot2", envir = environment()))
+  } else if (df %in% data(dbGetQuery(conn,"show tables")) {
+    get(utils::data(conn))
   } else {
     NULL
   }
