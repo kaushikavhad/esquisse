@@ -537,7 +537,7 @@ controls_params <- function(ns) {
     "asn", "atanh", "boxcox", "exp", "identity",
     "log", "log10", "log1p", "log2", "logit", 
     "probability", "probit", "reciprocal",
-    "reverse", "sqrt"
+    "reverse", "sqrt","sum"
   )
   
   tagList(
