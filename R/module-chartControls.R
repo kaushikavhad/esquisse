@@ -601,24 +601,24 @@ controls_params <- function(ns) {
         icon = icon("check")
       )
     ),
-    tags$div(
-      id = ns("controls-scale-trans-x"), style = "display: none;",
-      selectInput(
-        inputId = ns("transX"), 
-        label = "X-Axis transform:",
-        selected = "identity", 
-        choices = scales_trans
-      )
-    ),
-    tags$div(
-      id = ns("controls-scale-trans-y"), style = "display: none;",
-      selectInput(
-        inputId = ns("transY"), 
-        label = "Y-Axis transform:",
-        selected = "identity", 
-        choices = scales_trans
-      )
-    ),
+    #tags$div(
+    #  id = ns("controls-scale-trans-x"), style = "display: none;",
+     # selectInput(
+       # inputId = ns("transX"), 
+       # label = "X-Axis transform:",
+       # selected = "identity", 
+        #choices = scales_trans
+      #)
+    #),
+    #tags$div(
+     # id = ns("controls-scale-trans-y"), style = "display: none;",
+      #selectInput(
+       # inputId = ns("transY"), 
+       # label = "Y-Axis transform:",
+       # selected = "identity", 
+       # choices = scales_trans
+     # )
+   # ),
     tags$div(
       id = ns("controls-density"), style = "display: none;",
       sliderInput(
