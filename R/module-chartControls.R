@@ -191,21 +191,21 @@ chartControlsServer <- function(input, output, session,
     }
   })
   
-  observeEvent(use_transX(), {
-    if (isTRUE(use_transX())) {
-      toggleDisplay(id = ns("controls-scale-trans-x"), display = "block")
-    } else {
-      toggleDisplay(id = ns("controls-scale-trans-x"), display = "none")
-    }
-  })
+  #observeEvent(use_transX(), {
+  #  if (isTRUE(use_transX())) {
+   #   toggleDisplay(id = ns("controls-scale-trans-x"), display = "block")
+   # } else {
+   #   toggleDisplay(id = ns("controls-scale-trans-x"), display = "none")
+   # }
+ # })
   
-  observeEvent(use_transY(), {
-    if (isTRUE(use_transY())) {
-      toggleDisplay(id = ns("controls-scale-trans-y"), display = "block")
-    } else {
-      toggleDisplay(id = ns("controls-scale-trans-y"), display = "none")
-    }
-  })
+ # observeEvent(use_transY(), {
+   # if (isTRUE(use_transY())) {
+   #   toggleDisplay(id = ns("controls-scale-trans-y"), display = "block")
+   # } else {
+   #   toggleDisplay(id = ns("controls-scale-trans-y"), display = "none")
+   # }
+  #})
 
   observeEvent(type$palette, {
     if (isTRUE(type$palette)) {
