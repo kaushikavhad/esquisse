@@ -50,12 +50,12 @@ clean_string <- function(str) {
 #'
 #' @importFrom utils data
 #'
-data=dbReadTable(conn,'Country')
+country=dbReadTable(conn,'Country')
 get_df <- function(df, env = globalenv()) {
   if (df %in% ls(name = env)) {
     get(x = df, envir = env)
-  } else if (df %in% data) {
-    get(utils::data)
+  } else if (df %in% data(country)) {
+    get(utils::data(country))
   } else {
     NULL
   }
