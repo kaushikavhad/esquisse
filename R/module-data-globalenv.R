@@ -27,7 +27,8 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   info_dfs <- lapply(
     X = dfs,
     FUN = function(x) {
-      tmp <- get_df(x)
+      tmp <- get_df(dbGetQuery(pool, 'SELECT * FROM public.x'),
+          viewer = "browser")
       sprintf("%d obs. of  %d variables", nrow(tmp), ncol(tmp))
     }
   )
