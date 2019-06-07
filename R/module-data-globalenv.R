@@ -20,7 +20,7 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   # List of data.frame
   dfs <- search_obj(what = "data.frame")
   if (is.null(dfs)) {
-    dfs <- data(package = "ggplot2", envir = environment())$results[, "Item"]
+    dfs <- dbListTables(pool)
   }
   
   info_dfs <- lapply(
