@@ -107,7 +107,7 @@ dataGlobalEnvServer <- function(input, output, session, data = NULL, name = NULL
   
   observeEvent(input$data, {
     req(input$data)
-    imported <- try(get_df(input$data), silent = TRUE)
+    imported <- try(dbReadTable(conn,x), silent = TRUE)
     if ("try-error" %in% class(imported) || NROW(imported) < 1) {
       toggleInput(inputId = ns("validate"), enable = FALSE)
       removeUI(selector = jns("result-import"))
