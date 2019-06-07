@@ -21,8 +21,7 @@ run_module <- function(module = c("filterDF", "chooseData", "chooseData2", "coer
   path <- file.path("modules-examples", module)
   shiny::shinyAppDir(
     appDir = system.file(path, package = "esquisse", mustWork=TRUE), 
-    options = list(display.mode = "showcase"),
-    getOption(8000)
+    options = list(display.mode = "showcase",port=8000),
   )
 }
 
