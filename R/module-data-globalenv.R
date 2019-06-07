@@ -20,14 +20,14 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   # List of data.frame
   dfs <- search_obj(what = "data.frame")
   if (is.null(dfs)) {
-    dfs <- dbListTables(pool)
+    dfs <- dbListTables(conn)
     #dfs <- data.frame(dbSendQuery(conn, "select * from Country"))
   }
   
   info_dfs <- lapply(
     X = dfs,
     FUN = function(x) {
-      tmp <- dbReadTable(pool,x)
+      tmp <- dbReadTable(conn,x)
       sprintf("%d obs. of  %d variables", nrow(tmp), ncol(tmp))
     }
   )
