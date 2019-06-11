@@ -116,7 +116,7 @@ esquisserUI <- function(id, header = TRUE, choose_data = TRUE) {
   
   box_title <- tags$div(
     class=""gadget-title dreamrs-title-box"",
-    tags$h1(shiny::icon("wrench"), "ggplot2 builder", class = "dreamrs-title"),
+    tags$h1(http://ingen.ingenspark.com/assets/img/4.png),
     tags$div(
       class = "pull-right",
       miniTitleBarButton(inputId = ns("close"), label = "Close")
