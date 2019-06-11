@@ -1,4 +1,4 @@
-TEMPLATE = u"""
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -247,4 +247,4 @@ download.addEventListener("click", function() {
 }, false);
 	  </script>
 </html>
-"""
+
