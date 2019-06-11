@@ -115,7 +115,7 @@ esquisserUI <- function(id, header = TRUE, choose_data = TRUE) {
   
   
   box_title <- tags$div(
-    class="gadget-title dreamrs-title-box",
+    class="navbar_main",
     tags$h1(shiny::icon("wrench"), "ggplot2 builder", class = "dreamrs-title"),
     tags$div(
       class = "pull-right",
