@@ -67,7 +67,7 @@ esquisser <- function(data = NULL,
   }
 
   runGadget(
-    app = htmlTemplate("C://Users//Accusaga5//Desktop//inginworks.html"), 
+    app =  esquisserUI(id = "esquisse"), 
     server = function(input, output, session) {
       callModule(
         module = esquisserServer, 
