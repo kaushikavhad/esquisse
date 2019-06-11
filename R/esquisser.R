@@ -39,6 +39,7 @@
 #' esquisser(iris, viewer = "browser")
 #' 
 #' }
+library(shiny)
 esquisser <- function(data = NULL, 
                       coerceVars = getOption(x = "esquisse.coerceVars", default = TRUE),
                       viewer = getOption(x = "esquisse.viewer", default = "dialog")) {
