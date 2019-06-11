@@ -115,13 +115,16 @@ esquisserUI <- function(id, header = TRUE, choose_data = TRUE) {
   
   
   box_title <- tags$div(
-    class="gadget-title dreamrs-title-box",
-    tags$h1(href="http://ingen.ingenspark.com/assets/img/4.png"),
-    tags$div(
-      class = "pull-right",
-      miniTitleBarButton(inputId = ns("close"), label = "Close")
+    class="container",
+    class="row",
+    class="header_in",
+    class="col-md-2",
+    class="logo_app",
+    tags$div(src="http://ingen.ingenspark.com/assets/img/logo-2.png""),
+
+      
     )
-  )
+  
     
 
   ### addin
