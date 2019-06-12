@@ -20,18 +20,18 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
   # List of data.frame
   dfs <- search_obj(what = "data.frame")
   if (is.null(dfs)) {
-    dfs <- dbListTables(conn)
-    #dfs <- data.frame(dbSendQuery(conn, "select * from Country"))
+    dfs <- dbGetQuery(pool,"SELECT table_name FROM information_schema.tables
+                   WHERE table_schema='public'")
   }
   
-  info_dfs <- lapply(
-    X = dfs,
-    FUN = function(x) {
-      tmp <- dbReadTable(conn,x)
-      sprintf("%d obs. of  %d variables", nrow(tmp), ncol(tmp))
-    }
-  )
-  info_dfs <- unlist(info_dfs)
+ # info_dfs <- lapply(
+  #  X = dfs,
+   # FUN = function(x) {
+     # tmp <- dbReadTable(pool,x)
+      #sprintf("%d obs. of  %d variables", nrow(tmp), ncol(tmp))
+   # }
+#  )
+  #info_dfs <- unlist(info_dfs)
   
   tagList(
     useShinyUtils(),
@@ -43,8 +43,8 @@ dataGlobalEnvUI <- function(id, dismissOnValidate = TRUE, selectVars = TRUE, coe
       inputId = ns("data"),
       label = "Choose a data.frame :",
       choices = dfs, width = "100%",
-      options = list(title = "List of data.frame..."),
-      choicesOpt = list(subtext = info_dfs)
+      options = list(title = "List of data.frame...")
+     # choicesOpt = list(subtext = info_dfs)
     ),
     
     tags$div(
@@ -95,7 +95,7 @@ dataGlobalEnvServer <- function(input, output, session, data = NULL, name = NULL
   ns <- session$ns
   jns <- function(x) paste0("#", ns(x))
   
-  imported_data <- reactiveValues(data =data, name = name)
+  imported_data <- reactiveValues(data = data, name = name)
   tmp_name <- reactiveValues(name = name)
   select_data <- reactiveValues(data = NULL, name = NULL, timestamp = Sys.time())
   coerce_data <- reactiveValues(data = NULL, name = NULL, timestamp = Sys.time())
@@ -107,7 +107,7 @@ dataGlobalEnvServer <- function(input, output, session, data = NULL, name = NULL
   
   observeEvent(input$data, {
     req(input$data)
-    imported <- try(dbReadTable(conn,input$data), silent = TRUE)
+    imported <- try(dbReadTable(pool,input$data), silent = TRUE)
     if ("try-error" %in% class(imported) || NROW(imported) < 1) {
       toggleInput(inputId = ns("validate"), enable = FALSE)
       removeUI(selector = jns("result-import"))
