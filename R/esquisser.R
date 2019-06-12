@@ -39,7 +39,6 @@
 #' esquisser(iris, viewer = "browser")
 #' 
 #' }
-library(shiny)
 esquisser <- function(data = NULL, 
                       coerceVars = getOption(x = "esquisse.coerceVars", default = TRUE),
                       viewer = getOption(x = "esquisse.viewer", default = "dialog")) {
@@ -67,7 +66,7 @@ esquisser <- function(data = NULL,
   }
 
   runGadget(
-    app =  esquisserUI(id = "esquisse"), 
+    app = 'C:\\Users\\Accusaga5\\Desktop\\rhtml.Rhtml', 
     server = function(input, output, session) {
       callModule(
         module = esquisserServer, 
@@ -78,5 +77,3 @@ esquisser <- function(data = NULL,
     viewer = inviewer
   )
 }
-
-
