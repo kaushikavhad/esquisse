@@ -1,4 +1,3 @@
-
 # Avance sur ta route, car elle n'existe que par ta marche.
 # S-A
 
@@ -66,7 +65,7 @@ esquisser <- function(data = NULL,
   }
 
   runGadget(
-    app = 'C:\\Users\\Accusaga5\\Desktop\\rhtml.Rhtml', 
+    app = esquisserUI(id = "esquisse"), 
     server = function(input, output, session) {
       callModule(
         module = esquisserServer, 
